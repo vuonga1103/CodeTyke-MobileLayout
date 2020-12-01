@@ -12,24 +12,31 @@
         color: $morning-sky;
         font-weight: 600;
         font-size: 1.5em;
+        @media (max-width: $mobile) {
+            text-align: left;
+        }
     }
 
     &__subHeader{
         @include subheader;
         min-height: 42px;
+        @media (max-width: $mobile) {
+            display: none;
+        }
     }
   
     &__answerArea {
-        background-color: white;
-        box-shadow: 0px 0px 20px -15px;
-        padding: 0px 0px 20px 0;
-        border-radius: 10px;
         display: grid;
         justify-content: center;
         @media only screen and (max-width: $tablet) {
             border-radius: unset;
         }
-
+        @media (min-width: $mobile) {
+            background-color: white;
+            box-shadow: 0px 0px 20px -15px;
+            padding: 0px 0px 20px 0;
+            border-radius: 10px;
+        }
     }
 
     &__selections{ 
@@ -37,12 +44,17 @@
         display: grid;
         grid-auto-flow: column;
         grid-gap: 10px;
+        @media (max-width: $tablet) {
+            grid-template-rows: 1fr 1fr;
+        }
     }
 
     &__submitButtonContainer {
         height: 50px;
         .submitButton {
-            float: right;
+            @media (min-width: $mobile) {
+                float: right;
+            }
         }
     }
 }
